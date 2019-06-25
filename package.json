@@ -1,0 +1,8 @@
+{
+  "name": "api-server",
+  "private": true,
+  "scripts": {
+    "start-server": "node server/index.js",
+    "postinstall": "(cd server && npm install); (cd client && npm install)"
+  }
+}
