@@ -9,6 +9,11 @@ or
 ```
 npm install
 ```
+If you are using windows OS, you need to manualy go to the server dir and install the dependencies
+```
+cd server
+npm install
+```
 
 Than to start the server run
 ```
