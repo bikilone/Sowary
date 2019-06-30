@@ -63,3 +63,24 @@ export const findSingleImg = (state = initialStateSingleImg, action = {}) => {
       return state;
   }
 };
+
+const initialStateTagSearch = {
+  tagsClicked: []
+};
+
+export const onTagClick = (state = initialStateTagSearch, action = {}) => {
+  switch (action.type) {
+    case constants.TAG_CLICK:
+      // filter for all tags
+      const fitleredStateTags = state.tagsClicked.filter(
+        tag => tag !== action.payload
+      );
+      // add new tag
+      if (fitleredStateTags.length === state.tagsClicked.length) {
+        fitleredStateTags.push(action.payload);
+      }
+      return { ...state, tagsClicked: fitleredStateTags };
+    default:
+      return state;
+  }
+};

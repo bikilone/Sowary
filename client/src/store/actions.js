@@ -25,3 +25,7 @@ export const findSingleImg = (pictures, imgUri) => {
     payload: pictures.find(picture => picture.uri === imgUri)
   };
 };
+
+export const onTagClick = tag => {
+  return { type: constants.TAG_CLICK, payload: tag };
+};

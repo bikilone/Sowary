@@ -14,7 +14,8 @@ const mapStateToProps = state => {
     error: state.fetchImgs.error,
     tags: state.fetchImgs.tags,
     searchField: state.searchImgs.searchField,
-    authors: state.fetchImgs.authors
+    authors: state.fetchImgs.authors,
+    tagsClicked: state.onTagClick.tagsClicked
   };
 };
 
@@ -29,7 +30,7 @@ class App extends Component {
     this.props.onFetchImgs();
   }
   render() {
-    const { imgs, searchField, isPending } = this.props;
+    const { imgs, searchField, isPending, tagsClicked } = this.props;
 
     const filteredImgs = imgs.filter(img => {
       const filteredNames = img.name
@@ -39,7 +40,17 @@ class App extends Component {
       const filteredAuthors = img.author
         .toLowerCase()
         .includes(searchField.toLowerCase());
-      return filteredNames || fitleredTags || filteredAuthors;
+      let filteredByTagsClicked = true;
+      if (tagsClicked.length > 0) {
+        filteredByTagsClicked = img.tags.some(
+          tag => tagsClicked.indexOf(tag) >= 0
+        );
+      }
+
+      return (
+        (filteredNames || fitleredTags || filteredAuthors) &&
+        filteredByTagsClicked
+      );
     });
 
     const uniqueTags = [];

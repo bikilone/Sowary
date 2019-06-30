@@ -5,12 +5,18 @@ import App from "./components/App";
 import { HashRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { fetchImgs, searchImgs, findSingleImg } from "./store/reducer";
+import {
+  fetchImgs,
+  searchImgs,
+  findSingleImg,
+  onTagClick
+} from "./store/reducer";
 import thunkMiddleware from "redux-thunk";
 const rootReducer = combineReducers({
   fetchImgs,
   searchImgs,
-  findSingleImg
+  findSingleImg,
+  onTagClick
 });
 const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
 
