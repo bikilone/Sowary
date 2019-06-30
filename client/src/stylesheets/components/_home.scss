@@ -1,0 +1,29 @@
+.home {
+  margin: 1rem;
+  color: $medium;
+  overflow-x: hidden;
+  @media (min-width: 576px) {
+    margin: 2rem;
+  }
+  @media (min-width: 960px) {
+    margin: 3rem;
+  }
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    @media (min-width: 576px) {
+      font-size: 2rem;
+    }
+  }
+  .line {
+    width: 5rem;
+    height: 2px;
+    background-color: $secondary;
+  }
+}
+hr {
+  opacity: 0.4;
+}
+.tag-list {
+  display: flex;
+}

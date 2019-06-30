@@ -1,0 +1,17 @@
+.tag {
+  display: inline-block;
+  border: 1px solid $medium;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    @extend .clicked;
+  }
+}
+
+.clicked {
+  color: white;
+  background: $medium;
+}

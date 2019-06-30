@@ -4,5 +4,8 @@
   "scripts": {
     "start-server": "node server/index.js",
     "postinstall": "(cd server && npm install); (cd client && npm install)"
+  },
+  "dependencies": {
+    "redux-thunk": "^2.3.0"
   }
 }

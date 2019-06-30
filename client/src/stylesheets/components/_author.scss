@@ -1,0 +1,33 @@
+.author {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.author-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.author-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-left: 1rem;
+}
+
+.author-name {
+  color: $dark;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.follow-author {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  background-color: $secondary;
+}

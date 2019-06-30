@@ -1,0 +1,36 @@
+.gallery {
+  column-count: 2;
+  column-gap: 0em;
+  margin: auto;
+  margin-top: 2rem;
+  text-align: center;
+  @media (min-width: 576px) {
+    column-count: 3;
+  }
+  @media (min-width: 960px) {
+    column-count: 4;
+  }
+  @media (min-width: 1200px) {
+    column-count: 5;
+  }
+  @media (min-width: 1920px) {
+    column-count: 6;
+  }
+
+  img {
+    width: 42vw;
+    margin-bottom: 1em;
+    @media (min-width: 576px) {
+      width: 27vw;
+    }
+    @media (min-width: 960px) {
+      width: 20vw;
+    }
+    @media (min-width: 1200px) {
+      width: 16vw;
+    }
+    @media (min-width: 1920px) {
+      width: 14vw;
+    }
+  }
+}

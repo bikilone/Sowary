@@ -1,0 +1,30 @@
+.price-slot {
+  padding: 1rem;
+  background-color: $light;
+  width: 33%;
+  text-align: center;
+
+  .price {
+    color: $secondary;
+    font-size: 1.2rem;
+  }
+  .size {
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    color: $medium;
+  }
+}
+.extended {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.market-freeze {
+  font-size: 1rem;
+  color: $dark;
+  font-weight: bold;
+}

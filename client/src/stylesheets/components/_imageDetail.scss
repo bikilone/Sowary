@@ -1,0 +1,85 @@
+.detail-page {
+  display: grid;
+  grid-template-columns: calc(100vw - 2rem);
+  grid-template-areas: "img" "about";
+  margin-top: 2rem;
+  justify-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  @media (min-width: 576px) {
+    grid-template-areas: "img about";
+    grid-template-columns: 1fr 1fr;
+  }
+  .detail-page-img {
+    grid-area: img;
+    width: calc(100% - 4rem);
+    display: inline-block;
+    margin-bottom: 1rem;
+    @media (min-width: 576px) {
+      width: calc(50vw - 2rem);
+    }
+  }
+  .detail-page-about {
+    grid-area: about;
+    width: calc(100% - 4rem);
+    @media (min-width: 576px) {
+      width: calc(50vw - 2rem);
+    }
+  }
+}
+
+.back {
+  color: $medium;
+  text-decoration: none;
+  .back-button {
+    margin-right: 0.5rem;
+  }
+}
+
+.img-title {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+.img-description {
+  font-size: 0.8rem;
+  color: $medium;
+}
+
+.price-slots {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.exclusively {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.exclusive-rights {
+  @extend .img-description;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  border-radius: 10px;
+  color: white;
+  background: $secondary;
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  margin-top: 1rem;
+  &:hover,
+  &:active {
+    color: $secondary;
+    background: white;
+    border: 1px solid $secondary;
+    cursor: pointer;
+  }
+}

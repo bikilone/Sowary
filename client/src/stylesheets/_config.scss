@@ -1,0 +1,25 @@
+$primary: #3880ff;
+$secondary: #0cd1e8;
+$tertiary: #7044ff;
+$success: #10dc60;
+$warning: #ffce00;
+$dark: #222428;
+$medium: #989aa2;
+$light: #f4f5f8;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
