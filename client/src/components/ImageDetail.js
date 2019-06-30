@@ -51,6 +51,7 @@ class ImageDetail extends Component {
     } = this.props.selectedImg;
     const priceSlots = Object.values(price);
     const priceSizes = Object.keys(price);
+    console.log(exclusive.isSold);
 
     return (
       <div className="detail-page">
@@ -72,13 +73,19 @@ class ImageDetail extends Component {
             ))}
           </div>
           <h1 className="exclusively">Use this image exclusively for:</h1>
-          <PriceSlot price={exclusive.price} extended={true} />
+          <PriceSlot
+            price={exclusive.price}
+            extended={true}
+            isSold={exclusive.isSold}
+          />
           <p className="exclusive-rights">
             Protect your work by licensing the exclusive rights to our images
             with Market Freeze
           </p>
           <hr />
-          <button className="add-to-cart">ADD TO CART</button>
+          <button className="add-to-cart" disabled={exclusive.isSold}>
+            ADD TO CART
+          </button>
         </div>
       </div>
     );

@@ -5,6 +5,9 @@ const PriceSlot = props => {
   if (props.extended) {
     classes += " extended";
   }
+  if (props.isSold) {
+    classes += " sold";
+  }
   return (
     <div className={classes}>
       <div className="price">$ {props.price}</div>
