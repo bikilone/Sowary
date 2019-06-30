@@ -69,7 +69,12 @@ class App extends Component {
             exact
             path="/pictures"
             render={() => (
-              <Home imgs={filteredImgs} tags={uniqueTags} title={searchField} />
+              <Home
+                imgs={filteredImgs}
+                tags={uniqueTags}
+                title={searchField}
+                tagsClicked={tagsClicked}
+              />
             )}
           />
           <Route

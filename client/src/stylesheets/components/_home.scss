@@ -2,10 +2,13 @@
   margin: 1rem;
   color: $medium;
   overflow-x: hidden;
+  min-height: calc(100vh - 1rem - 50px - 69px - 32px);
   @media (min-width: 576px) {
+    min-height: calc(100vh - 2rem - 50px - 69px - 32px);
     margin: 2rem;
   }
   @media (min-width: 960px) {
+    min-height: calc(100vh - 4rem - 50px - 69px - 32px);
     margin: 3rem;
   }
   .section-title {

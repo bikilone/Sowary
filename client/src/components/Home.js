@@ -4,11 +4,25 @@ import Gallery from "./Gallery";
 
 class Home extends Component {
   render() {
-    const { imgs, tags, title } = this.props;
-    const finalTitle = title
-      ? title.charAt(0).toUpperCase() + title.slice(1) + " pictures"
-      : "All Pictures";
+    const { imgs, tags, title, tagsClicked } = this.props;
+    const capitalize = string => {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    };
 
+    let finalTitle = "";
+    if (title) {
+      finalTitle = capitalize(title) + " Pictures";
+    }
+    if (!title) {
+      finalTitle = "All Pictures";
+    }
+    if (title && tagsClicked.length > 0) {
+      finalTitle =
+        capitalize(title) + " & " + capitalize(tagsClicked[0]) + " Pictures";
+    }
+    if (!title && tagsClicked.length > 0) {
+      finalTitle = capitalize(tagsClicked[0]) + " Pictures";
+    }
     let numOfPictures = "";
     if (!title) {
       numOfPictures = imgs.length + " pictures";
