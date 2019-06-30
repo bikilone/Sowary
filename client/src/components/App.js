@@ -6,6 +6,7 @@ import ImageDetail from "./ImageDetail";
 import Footer from "./Footer";
 import { fetchImgs } from "../store/actions";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
 const mapStateToProps = state => {
   return {
@@ -59,30 +60,34 @@ class App extends Component {
       const newTags = picture.tags.filter(tag => !uniqueTags.includes(tag));
       uniqueTags.push(...newTags);
     });
-
     return (
       <div>
         <Navbar />
-
-        <Switch>
-          <Route
-            exact
-            path="/pictures"
-            render={() => (
-              <Home
-                imgs={filteredImgs}
-                tags={uniqueTags}
-                title={searchField}
-                tagsClicked={tagsClicked}
-              />
-            )}
-          />
-          <Route
-            path="/picture/:id"
-            render={props => <ImageDetail imgs={imgs} {...props} />}
-          />
-          <Redirect from="/" to="/pictures" />
-        </Switch>
+        {isPending ? (
+          <div className="loader">
+            <Loader type="Circles" color="#00BFFF" height="100" width="100" />
+          </div>
+        ) : (
+          <Switch>
+            <Route
+              exact
+              path="/pictures"
+              render={() => (
+                <Home
+                  imgs={filteredImgs}
+                  tags={uniqueTags}
+                  title={searchField}
+                  tagsClicked={tagsClicked}
+                />
+              )}
+            />
+            <Route
+              path="/picture/:id"
+              render={props => <ImageDetail imgs={imgs} {...props} />}
+            />
+            <Redirect from="/" to="/pictures" />
+          </Switch>
+        )}
 
         <Footer />
       </div>
