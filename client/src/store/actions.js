@@ -29,3 +29,7 @@ export const findSingleImg = (pictures, imgUri) => {
 export const onTagClick = tag => {
   return { type: constants.TAG_CLICK, payload: tag };
 };
+
+export const onAuthorClick = author => {
+  return { type: constants.AUTHOR_CLICK, payload: author };
+};

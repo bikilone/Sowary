@@ -4,3 +4,4 @@ export const FETCH_IMGS_SUCCESS = "FETCH_IMGS_SUCCESS";
 export const FETCH_IMGS_FAILED = "FETCH_IMGS_FAILED";
 export const FIND_SINGLE_IMG = "FIND_SINGLE_IMG";
 export const TAG_CLICK = "TAG_CLICK";
+export const AUTHOR_CLICK = "AUTHOR_CLICK";

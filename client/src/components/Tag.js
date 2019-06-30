@@ -1,6 +1,7 @@
 import React from "react";
 import { onTagClick } from "../store/actions";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 const mapStateToProps = state => {
   return {
@@ -20,14 +21,15 @@ const Tag = props => {
     classes += " clicked";
   }
   return (
-    <div
+    <Link
+      to="/pictures"
       className={classes}
       onClick={e => {
         props.tagClick(props.tag);
       }}
     >
       {props.tag}
-    </div>
+    </Link>
   );
 };
 

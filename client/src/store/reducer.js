@@ -24,12 +24,15 @@ export const fetchImgs = (state = initialState, action = {}) => {
 };
 
 const initialSearchFieldState = {
-  searchField: ""
+  searchField: "",
+  searchFieldValue: ""
 };
 
 export const searchImgs = (state = initialSearchFieldState, action = {}) => {
   switch (action.type) {
     case constants.CHANGE_SEARCH_FIELD:
+      return { ...state, searchField: action.payload };
+    case constants.AUTHOR_CLICK:
       return { ...state, searchField: action.payload };
     default:
       return state;
