@@ -51,7 +51,6 @@ class ImageDetail extends Component {
     } = this.props.selectedImg;
     const priceSlots = Object.values(price);
     const priceSizes = Object.keys(price);
-    console.log(exclusive.isSold);
 
     return (
       <div className="detail-page">
