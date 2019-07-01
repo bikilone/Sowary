@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start-server": "node server/index.js",
-    "postinstall": "(cd server && npm install); (cd client && npm install)",
+    "postinstall": "cd server && npm install && cd ../client && npm install",
     "client": "cd ./client && npm start",
     "dev": "concurrently \"npm run start-server\" \"npm run client\""
   },
